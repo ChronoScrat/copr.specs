@@ -11,6 +11,7 @@ RUN dnf install -y \
     diffutils \
     patch \
     rpmdevtools \
+    rpkg \
     mock \
     git \
     git-lfs
