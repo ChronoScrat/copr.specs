@@ -2,7 +2,7 @@ ARG REGISTRY=registry.fedoraproject.org
 ARG DEFAULT_IMAGE=fedora-minimal
 ARG DEFAULT_TAG=41
 
-FROM ${REGISTRY}/${$DEFAULT_IMAGE}:${DEFAULT_TAG}
+FROM ${REGISTRY}/${DEFAULT_IMAGE}:${DEFAULT_TAG}
 
 RUN dnf install -y \
     rpm-build \
@@ -11,7 +11,9 @@ RUN dnf install -y \
     diffutils \
     patch \
     rpmdevtools \
-    mock
+    mock \
+    git \
+    git-lfs
 
 RUN dnf clean all -y
 RUN dnf autoremove -y
