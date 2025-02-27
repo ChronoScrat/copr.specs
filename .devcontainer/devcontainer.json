@@ -1,0 +1,11 @@
+{
+    "name": "Fedora Toolkit",
+    "build": {
+        "dockerfile": "Containerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": ["ian-h-chamberlain.rpm-specfile"]
+        }
+    }
+}

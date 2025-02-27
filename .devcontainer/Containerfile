@@ -1,0 +1,18 @@
+ARG REGISTRY=registry.fedoraproject.org
+ARG DEFAULT_IMAGE=fedora-minimal
+ARG DEFAULT_TAG=41
+
+FROM ${REGISTRY}/${$DEFAULT_IMAGE}:${DEFAULT_TAG}
+
+RUN dnf install -y \
+    rpm-build \
+    rpm-devel \
+    rpmlint \
+    diffutils \
+    patch \
+    rpmdevtools \
+    mock
+
+RUN dnf clean all -y
+RUN dnf autoremove -y
+RUN rm -fr /var/cache/dnf/*
