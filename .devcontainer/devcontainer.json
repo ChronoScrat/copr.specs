@@ -5,9 +5,13 @@
     },
     "runArgs": ["--privileged"],
     "remoteUser": "mocker",
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+    "mounts": [{ "source": "/tmp", "target": "/tmp", "type": "bind" }],
+    "otherPortsAttributes": { "onAutoForward" : "ignore" },
     "customizations": {
         "vscode": {
-            "extensions": ["ian-h-chamberlain.rpm-specfile"]
+            "extensions": ["ian-h-chamberlain.rpm-specfile","mads-hartmann.bash-ide-vscode","eamodio.gitlens"]
         }
     }
 }
