@@ -23,17 +23,17 @@ feature is only available in GNOME (and Budgie).
 {{{ git_dir_setup_macro }}}
 
 %install
-mkdir -p -m0644 \
-    %{buildroot}/%{_datadir}/backgrounds/%{bgname} \
-    %{buildroot}/%{_datadir}/gnome-background-properties
+mkdir -p -m0755 \
+    %{buildroot}%{_datadir}/backgrounds/%{bgname} \
+    %{buildroot}%{_datadir}/gnome-background-properties
 
-mv images/*.jxl %{buildroot}/%{_datadir}/backgrounds/%{bgname}
-mv lakeside-dynamic.xml %{buildroot}/%{_datadir}/backgrounds/%{bgname}
-mv lakeside-gnome.xml %{buildroot}/%{_datadir}/gnome-background-properties
+mv images/*.jxl %{buildroot}%{_datadir}/backgrounds/%{bgname}
+mv lakeside-dynamic.xml %{buildroot}%{_datadir}/backgrounds/%{bgname}
+mv lakeside-gnome.xml %{buildroot}%{_datadir}/gnome-background-properties
 
 %files
-%{_datadir}/backgrounds/%{bgname}/*
-%{_datadir}/gnome-background-properties/lakeside-gnome.xml
+%attr(0755,root,root) %{_datadir}/backgrounds/%{bgname}/*
+%attr(0755,root,root) %{_datadir}/gnome-background-properties/lakeside-gnome.xml
 
 %changelog
 %autochangelog
