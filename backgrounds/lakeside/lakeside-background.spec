@@ -25,17 +25,15 @@ feature is only available in GNOME (and Budgie).
 %install
 mkdir -p -m0644 \
     %{buildroot}/%{_datadir}/backgrounds/%{bgname} \
-    %{buildroot}%{_datadir}/gnome-background-properties
+    %{buildroot}/%{_datadir}/gnome-background-properties
 
-mv images/Lakeside-*.jxl %{buildroot}/%{_datadir}/backgrounds/%{bgname}
+mv images/*.jxl %{buildroot}/%{_datadir}/backgrounds/%{bgname}
 mv lakeside-dynamic.xml %{buildroot}/%{_datadir}/backgrounds/%{bgname}
 mv lakeside-gnome.xml %{buildroot}%{_datadir}/gnome-background-properties
 
 %files
-%dir %{buildroot}/%{_datadir}/backgrounds/%{bgname}
-%{buildroot}/%{_datadir}/backgrounds/%{bgname}/Lakeside-*.jxl
-%{buildroot}/%{_datadir}/backgrounds/%{bgname}/lakeside-dynamic.xml
-%{buildroot}%{_datadir}/gnome-background-properties/lakeside-gnome.xml
+%{_datadir}/backgrounds/%{bgname}/*
+%{_datadir}/gnome-background-properties/lakeside-gnome.xml
 
 %changelog
 %autochangelog

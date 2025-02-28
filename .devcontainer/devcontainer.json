@@ -3,6 +3,7 @@
     "build": {
         "dockerfile": "Containerfile"
     },
+    "runArgs": ["--privileged"],
     "customizations": {
         "vscode": {
             "extensions": ["ian-h-chamberlain.rpm-specfile"]
