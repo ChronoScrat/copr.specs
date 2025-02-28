@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+    <wallpaper deleted="false">
+        <name>Lakeside Time of Day</name>
+        <filename>/usr/share/backgrounds/aurora/aurora-dynamic.xml</filename>
+        <options>stretched</options>
+    </wallpaper>
+
+    <wallpaper>
+        <name>Lakeside</name>
+        <filename>/usr/share/backgrounds/aurora/12.jxl</filename>
+        <filename-dark>/usr/share/backgrounds/aurora/0.jxl</filename-dark>
+        <options>stretched</options>
+    </wallpaper>
+</wallpapers>
