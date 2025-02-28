@@ -29,7 +29,7 @@ mkdir -p -m0644 \
 
 mv images/*.jxl %{buildroot}/%{_datadir}/backgrounds/%{bgname}
 mv lakeside-dynamic.xml %{buildroot}/%{_datadir}/backgrounds/%{bgname}
-mv lakeside-gnome.xml %{buildroot}%{_datadir}/gnome-background-properties
+mv lakeside-gnome.xml %{buildroot}/%{_datadir}/gnome-background-properties
 
 %files
 %{_datadir}/backgrounds/%{bgname}/*
