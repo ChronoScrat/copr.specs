@@ -4,6 +4,7 @@
         "dockerfile": "Containerfile"
     },
     "runArgs": ["--privileged"],
+    "remoteUser": "mocker",
     "customizations": {
         "vscode": {
             "extensions": ["ian-h-chamberlain.rpm-specfile"]
