@@ -5,7 +5,7 @@ Name:       aurora-backgrounds
 Version:    0.1.0
 Release:    1%{?dist}
 License:    CC-BY-NC-SA-4.0
-Summary:    Lakeside Time of Day backgrounds
+Summary:    Aurora Time of Day backgrounds
 
 URL:        https://github.com/chronoscrat/copr.specs
 VCS:        {{{ git_dir_vcs }}}
