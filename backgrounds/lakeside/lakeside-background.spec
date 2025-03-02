@@ -2,7 +2,7 @@
 %global bgname lakeside
 
 Name:       lakeside-backgrounds
-Version:    0.1.0
+Version:    0.3.0
 Release:    1%{?dist}
 License:    CC-BY-NC-SA-4.0
 Summary:    Lakeside Time of Day backgrounds
