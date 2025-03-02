@@ -9,134 +9,134 @@
 	</starttime>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-12.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-12.jxl</file>
 		<duration>21595.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-12.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-1.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-12.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-1.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-1.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-1.jxl</file>
 		<duration>3595.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-1.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-2.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-1.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-2.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-2.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-2.jxl</file>
 		<duration>3595.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-2.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-3.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-2.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-3.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-3.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-3.jxl</file>
 		<duration>3595.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-3.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-4.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-3.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-4.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-4.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-4.jxl</file>
 		<duration>3595.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-4.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-5.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-4.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-5.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-5.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-5.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-5.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-6.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-5.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-6.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-6.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-6.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-6.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-7.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-6.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-7.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-7.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-7.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-7.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-8.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-7.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-8.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-8.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-8.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-8.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-9.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-8.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-9.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-9.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-9.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-9.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-10.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-9.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-10.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-10.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-10.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-10.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-11.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-10.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-11.jxl</to>
 	</transition>
 
 	<static>
-		<file>/usr/share/backgrounds/lakeside/Lakeside-11.jpg</file>
+		<file>/usr/share/backgrounds/lakeside/Lakeside-11.jxl</file>
 		<duration>7195.0</duration>
 	</static>
 
 	<transition type="overlay">
 		<duration>5.0</duration>
-		<from>/usr/share/backgrounds/lakeside/Lakeside-11.jpg</from>
-		<to>/usr/share/backgrounds/lakeside/Lakeside-12.jpg</to>
+		<from>/usr/share/backgrounds/lakeside/Lakeside-11.jxl</from>
+		<to>/usr/share/backgrounds/lakeside/Lakeside-12.jxl</to>
 	</transition>
 </background>

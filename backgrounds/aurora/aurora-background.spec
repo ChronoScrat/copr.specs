@@ -2,7 +2,7 @@
 %global bgname aurora
 
 Name:       aurora-backgrounds
-Version:    0.1.0
+Version:    0.2.0
 Release:    1%{?dist}
 License:    CC-BY-NC-SA-4.0
 Summary:    Aurora Time of Day backgrounds
