@@ -31,7 +31,7 @@ install -Dm0644 -t %{buildroot}%{_datadir}/icons/hicolor/256x256@2/apps usr/shar
 
 %files
 %{_bindir}/devpod-cli
-%{_bindir}/devpod
+%{_bindir}/dev-pod-desktop
 %{_datadir}/icons/hicolor/32x32/apps/dev-pod-desktop.png
 %{_datadir}/icons/hicolor/128x128/apps/dev-pod-desktop.png
 %{_datadir}/icons/hicolor/256x256@2/apps/dev-pod-desktop.png
