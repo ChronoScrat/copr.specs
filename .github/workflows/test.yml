@@ -1,5 +1,7 @@
 # This workflow is adapted from https://github.com/ublue-os/packages/blob/main/.github/workflows/build-package.yml
 
+# TODO For some reason "build_packages" gets skipped even when it shouldn't
+
 name: Test Changes
 
 on:
@@ -43,7 +45,7 @@ jobs:
     build_packages:
         runs-on: ubuntu-24.04
         needs: changed_specs
-        #if: needs.changed_specs.outputs.spec_has_changed == 'true'
+        if: needs.changed_specs.outputs.spec_has_changed == 'true'
         strategy:
             fail-fast: false
             matrix:
@@ -54,6 +56,7 @@ jobs:
 
             - name: Build ${{ matrix.specs }}
               run: |
+                # Ubuntu does not have `rpkg`, so we must move this into a container
                 file_name=$(basename ${{ matrix.specs }})
                 mkdir /tmp/rpmbuild
                 rpkg spec --spec ${{matrix.specs}} --outdir /tmp/rpmbuild
