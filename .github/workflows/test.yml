@@ -1,0 +1,78 @@
+# This workflow is adapted from https://github.com/ublue-os/packages/blob/main/.github/workflows/build-package.yml
+
+name: Test Changes
+
+on:
+    pull_request:
+        branches:
+            - main
+            - test
+        paths-ignore:
+            - '.devcontainer/*'
+            - '.github/*'
+            - 'README.md'
+            - '.gitignore'
+            - 'CONTRIBUTING.md'
+
+jobs:
+    changed_specs:
+        runs-on: ubuntu-24.04
+        outputs:
+            specs: ${{ steps.changed-files.outputs.CHANGED_SPECS }}
+            spec_has_changed: ${{ steps.changed-files.outputs.spec_has_changed }}
+        steps:
+            - name: Checkout
+              id: checkout
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+            - name: Get changed files
+              id: changed-files
+              run: |
+                files_list="$(git diff --name-only ${{ github.event.before }} HEAD | xargs)"
+                CHANGED_SPECS="{\"specs\":[]}"
+                for file in ${files_list}; do
+                    if [[ ${file##*.} == "spec" ]]; then
+                        spec_path=$(realpath ${file})
+                        CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs" += [\"${spec_path}\"])
+                        echo "spec_has_changed='true'" >> ${GITHUB_OUTPUT}
+                    fi
+                done
+
+                echo "CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c '.specs')" >> ${GITHUB_OUTPUT}
+    
+    build_packages:
+        runs-on: ubuntu-24.04
+        needs: changed_specs
+        if: needs.changed_specs.outputs.spec_has_changed == 'true'
+        strategy:
+            fail-fast: false
+            matrix:
+                chroots: ['fedora-40','fedora-41','fedora-42','rawhide']
+                specs: ${{ fromJson(needs.changed_specs.outputs.specs) }}
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+            - name: Build ${{ matrix.specs }}
+              run: |
+                file_name=$(basename ${{ matrix.specs }})
+                mkdir /tmp/rpmbuild
+                rpkg spec --spec ${{matrix.specs}} --outdir /tmp/rpmbuild
+                spectool -g --directory /tmp/rpmbuild /tmp/rpmbuild/${file_name}
+                rpkg --path /tmp/rpmbuild srpm --outdir /tmp/rpmbuild
+
+                mock --spec /tmp/rpmbuild/${file_name} --sources /tmp/rpmbuild -r ${{ matrix.chroots }}-x86_64
+    
+    check:
+        runs-on: ubuntu-24.04
+        if: always()
+        needs: build_packages
+        steps:
+            - name: Check
+              env:
+                JOBS: ${{ toJSON(needs) }}
+              run: |
+                for job in $(echo ${JOBS} | jq -r 'to_entries[] | .value.result'); do
+                    if [ "$job" != "success" ] && [ "$job" != "skipped" ]; then
+                        exit 1
+                    fi
+                done
