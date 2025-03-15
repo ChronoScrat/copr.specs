@@ -35,6 +35,7 @@ jobs:
                         spec_path=$(realpath ${file})
                         CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs" += [\"${spec_path}\"])
                         echo "spec_has_changed=true" >> ${GITHUB_OUTPUT}
+                        echo "aaaaa"
                     fi
                 done
 
