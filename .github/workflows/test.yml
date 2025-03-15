@@ -43,7 +43,7 @@ jobs:
     build_packages:
         runs-on: ubuntu-24.04
         needs: changed_specs
-        if: needs.changed_specs.outputs.spec_has_changed == 'true'
+        #if: needs.changed_specs.outputs.spec_has_changed == 'true'
         strategy:
             fail-fast: false
             matrix:
