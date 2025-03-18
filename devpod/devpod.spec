@@ -22,12 +22,10 @@ Codespaces but open-source, client-only and unopinionated: Works with any IDE an
 %autosetup -c
 
 %install
-
 # DevPod does not ship with a `StartupWMClass` key in the desktop file, which causes
 # missing icons in GNOME's Dock and KDE's taskbar. Until fixed, we solve this issue here.
 # https://github.com/loft-sh/devpod/issues/1776
-echo "StartupWMClass=dev-pod-desktop" >> usr/share/applications/DevPod.desktop
-
+echo "StartupWMClass=dev-pod-desktop" | tee -a usr/share/applications/DevPod.desktop
 install -Dm0755 -t %{buildroot}%{_bindir} usr/bin/dev-pod-desktop
 install -Dm0755 -t %{buildroot}%{_bindir} usr/bin/devpod-cli
 install -Dm0644 -t %{buildroot}%{_datadir}/applications usr/share/applications/DevPod.desktop
