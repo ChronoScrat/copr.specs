@@ -10,7 +10,7 @@
     "otherPortsAttributes": { "onAutoForward" : "ignore" },
     "customizations": {
         "vscode": {
-            "extensions": ["ian-h-chamberlain.rpm-specfile","mads-hartmann.bash-ide-vscode","eamodio.gitlens"]
+            "extensions": ["ian-h-chamberlain.rpm-specfile","mads-hartmann.bash-ide-vscode","eamodio.gitlens","nefrob.vscode-just-syntax"]
         }
     }
 }

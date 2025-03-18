@@ -15,7 +15,8 @@ RUN dnf install -y \
     mock \
     git \
     git-lfs \
-    sudo
+    sudo \
+    just
 
 RUN dnf clean all -y
 RUN dnf autoremove -y
