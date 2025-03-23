@@ -8,7 +8,6 @@ on:
     pull_request:
         branches:
             - main
-            - test
         paths-ignore:
             - '.devcontainer/*'
             - '.github/*'
@@ -35,7 +34,7 @@ jobs:
                 for file in ${files_list}; do
                     if [[ ${file##*.} == "spec" ]]; then
                         spec_path=$(realpath ${file})
-                        CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs" += [\"${spec_path}\"])
+                        CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs += [\"${spec_path}\"]")
                         echo "spec_has_changed=true" >> ${GITHUB_OUTPUT}
                     fi
                 done
