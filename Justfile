@@ -1,6 +1,6 @@
 # Inspired by: https://github.com/ublue-os/packages/blob/main/Justfile
 
-build $SPEC_FILE:
+build $SPEC_FILE $MOCK_ARGS:
     #!/usr/bin/bash
     set -x
 
@@ -19,4 +19,4 @@ build $SPEC_FILE:
     spectool -ga ${OUTDIR}/${SPEC_NAME} --directory ${OUTDIR}
     rpkg --path ${OUTDIR} srpm --outdir ${OUTDIR}
 
-    mock --spec ${OUTDIR}/${SPEC_NAME} --sources ${OUTDIR} --resultdir ${OUTDIR}
+    mock --spec ${OUTDIR}/${SPEC_NAME} --sources ${OUTDIR} --resultdir ${OUTDIR} $MOCK_ARGS
