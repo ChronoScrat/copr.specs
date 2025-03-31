@@ -8,7 +8,7 @@ Release:        1%{?dist}
 Summary:        Run your GitHub Actions locally
 License:        MIT
 
-URL:            https://github.com/nektos/%{name}
+URL:            https://github.com/nektos/act
 Source0:        %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires:  git
