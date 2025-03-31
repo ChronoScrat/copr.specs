@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 %global _missing_build_ids_terminate_build 0
 
-Name:           act
+Name:           act-cli
 # renovate: datasource=github-releases depName=nektos/act
 Version:        v0.2.75
 Release:        1%{?dist}
