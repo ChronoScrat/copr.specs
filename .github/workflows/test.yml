@@ -1,7 +1,5 @@
 # This workflow is adapted from https://github.com/ublue-os/packages/blob/main/.github/workflows/build-package.yml
 
-# TODO For some reason "build_packages" gets skipped even when it shouldn't
-
 name: Test Changes
 
 on:
@@ -9,18 +7,18 @@ on:
         branches:
             - main
         paths-ignore:
-            - '.devcontainer/*'
-            - '.github/*'
+            - '.devcontainer/**'
+            - '.github/**'
             - 'README.md'
             - '.gitignore'
             - 'CONTRIBUTING.md'
+            - 'Justfile'
 
 jobs:
     changed_specs:
         runs-on: ubuntu-24.04
         outputs:
-            specs: ${{ steps.changed-files.outputs.CHANGED_SPECS }}
-            spec_has_changed: ${{ steps.changed-files.outputs.spec_has_changed }}
+            changed-specs: ${{ steps.changed-files.outputs.changed-specs }}
         steps:
             - name: Checkout
               id: checkout
@@ -29,40 +27,38 @@ jobs:
             - name: Get changed files
               id: changed-files
               run: |
-                files_list="$(git diff --name-only ${{ github.event.before }} HEAD | xargs)"
+                files_list="$(git diff --name-only main HEAD | xargs)"
                 CHANGED_SPECS="{\"specs\":[]}"
                 for file in ${files_list}; do
                     if [[ ${file##*.} == "spec" ]]; then
                         spec_path=$(realpath ${file})
                         CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs += [\"${spec_path}\"]")
-                        echo "spec_has_changed=true" >> ${GITHUB_OUTPUT}
                     fi
                 done
 
-                echo "CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c '.specs')" >> ${GITHUB_OUTPUT}
+                echo "changed-specs=$(echo ${CHANGED_SPECS} | jq -c '.specs')" >> ${GITHUB_OUTPUT}
     
     build_packages:
         runs-on: ubuntu-24.04
         needs: changed_specs
-        if: needs.changed_specs.outputs.spec_has_changed == 'true'
+        if: ${{ needs.changed_specs.outputs.changed-specs != '[]' }}
         strategy:
             fail-fast: false
             matrix:
-                chroots: ['fedora-40','fedora-41','fedora-42','rawhide']
-                specs: ${{ fromJson(needs.changed_specs.outputs.specs) }}
+                specs: ${{ fromJson(needs.changed_specs.outputs.changed-specs) }}
         steps:
-            - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+            -  name: Checkout
+               uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+
+            - name: Setup Just
+              uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff
 
             - name: Build ${{ matrix.specs }}
+              id: build-packages
               run: |
-                # Ubuntu does not have `rpkg`, so we must move this into a container
-                file_name=$(basename ${{ matrix.specs }})
-                mkdir /tmp/rpmbuild
-                rpkg spec --spec ${{matrix.specs}} --outdir /tmp/rpmbuild
-                spectool -g --directory /tmp/rpmbuild /tmp/rpmbuild/${file_name}
-                rpkg --path /tmp/rpmbuild srpm --outdir /tmp/rpmbuild
+                just=$(which just)
 
-                mock --spec /tmp/rpmbuild/${file_name} --sources /tmp/rpmbuild -r ${{ matrix.chroots }}-x86_64
+                ${just} ci ${{ matrix.specs }} --enable-network
     
     check:
         runs-on: ubuntu-24.04
