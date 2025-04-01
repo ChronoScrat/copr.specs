@@ -28,7 +28,7 @@ jobs:
             - name: Get origin/main
               id: get-origin-main
               run: |
-                git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/main
+                git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
 
             - name: Get changed files
               id: changed-files
