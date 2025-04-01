@@ -27,7 +27,7 @@ build $SPEC_FILE *MOCK_ARGS:
     cp ${SPEC_DIR}/*.patch ${OUTDIR}
     rpmlint ${OUTDIR}/${SPEC_NAME}
     spectool -ga ${OUTDIR}/${SPEC_NAME} --directory ${OUTDIR}
-    rpkg --path ${OUTDIR} srpm --outdir ${OUTDIR}
+    rpkg --path ${SPEC_DIR} srpm --outdir ${OUTDIR}
 
     mock --spec ${OUTDIR}/${SPEC_NAME} --sources ${OUTDIR} --resultdir ${OUTDIR} {{ MOCK_ARGS }}
 
