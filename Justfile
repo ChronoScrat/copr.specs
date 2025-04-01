@@ -7,6 +7,7 @@ build $SPEC_FILE $MOCK_ARGS:
     OUTDIR="${OUTDIR:-/tmp/rpmbuild}"
     SPEC_PATH=$(realpath $SPEC_FILE)
     SPEC_NAME=$(basename $SPEC_PATH)
+    SPEC_DIR=$(dirname $SPEC_PATH)
 
     if [ -d ${OUTDIR} ]; then
         rm -fr ${OUTDIR}
@@ -15,6 +16,7 @@ build $SPEC_FILE $MOCK_ARGS:
     mkdir ${OUTDIR}
 
     rpkg spec --spec ${SPEC_PATH} --outdir ${OUTDIR}
+    cp ${SPEC_DIR}/*.patch ${OUTDIR}
     rpmlint ${OUTDIR}/${SPEC_NAME}
     spectool -ga ${OUTDIR}/${SPEC_NAME} --directory ${OUTDIR}
     rpkg --path ${OUTDIR} srpm --outdir ${OUTDIR}
