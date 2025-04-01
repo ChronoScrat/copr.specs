@@ -1,0 +1,24 @@
+From 5ef67d7654f2fb8c1f8db65ec82a85129128c30b Mon Sep 17 00:00:00 2001
+From: Nathanael Rolim <natanael.rolim@hotmail.com>
+Date: Tue, 1 Apr 2025 16:32:36 -0300
+Subject: [PATCH] Downgrade go to 1.23
+
+---
+ go.mod | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/go.mod b/go.mod
+index 5afb235..cba2bdb 100644
+--- a/go.mod
++++ b/go.mod
+@@ -1,6 +1,6 @@
+ module github.com/nektos/act
+ 
+-go 1.24
++go 1.23
+ 
+ require (
+ 	github.com/AlecAivazis/survey/v2 v2.3.7
+-- 
+2.49.0
+
