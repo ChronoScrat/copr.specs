@@ -37,7 +37,7 @@ jobs:
                 CHANGED_SPECS="{\"specs\":[]}"
                 for file in ${files_list}; do
                     if [[ ${file##*.} == "spec" ]]; then
-                        spec_path=$(realpath ${file})
+                        spec_path=${file}
                         CHANGED_SPECS=$(echo ${CHANGED_SPECS} | jq -c ".specs += [\"${spec_path}\"]")
                     fi
                 done
