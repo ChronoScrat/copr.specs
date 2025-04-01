@@ -4,7 +4,7 @@
 Name:           devpod
 # renovate: datasource=github-releases depName=loft-sh/devpod
 Version:        v0.6.15
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        Codespaces but open-source, client-only and unopinionated.
 
 License:        MPL-2.0
