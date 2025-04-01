@@ -27,7 +27,7 @@ jobs:
             - name: Get changed files
               id: changed-files
               run: |
-                files_list="$(git diff --name-only main HEAD | xargs)"
+                files_list="$(git diff --name-only origin/main HEAD | xargs)"
                 CHANGED_SPECS="{\"specs\":[]}"
                 for file in ${files_list}; do
                     if [[ ${file##*.} == "spec" ]]; then
