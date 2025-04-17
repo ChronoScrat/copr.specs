@@ -4,16 +4,22 @@ This repository holds a collection of different SPEC files for different applica
 
 All packages are built in [COPR](https://copr.fedorainfracloud.org/coprs/chronoscrat) and made available under different repositories.
 
-Eventually I plan to include a README file in each subdirectory with more information about the packages.
+I plan to eventually include a README file in each subdirectory with more information about the packages.
 
-### DevPod
+### Build Status
 
-[![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/)
+| Package Name | Build Status |
+| :--- | :---: |
+| `act` | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/act-cli/package/act-cli/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/act-cli/package/act-cli/) |
+| Devpod | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/) |
+| Oh My Posh | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/oh-my-posh/package/oh-my-posh/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/oh-my-posh/package/oh-my-posh/) |
+| Starship | Not Built |
+
 
 The DevPod spec file is taken from [the uBlue packages](https://github.com/ublue-os/packages/blob/main/staging/devpod/devpod.spec).
 
 
-### Backgrounds
+### Wallpapers
 
 A collection of wallpapers I normally use in my workstations. They generally include a configuration file for GNOME that enables changing the wallpaper according to the time of day.
 
