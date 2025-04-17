@@ -4,7 +4,7 @@
 Name:           oh-my-posh
 # renovate: datasource=github-releases depName=JanDeDobbeleer/oh-my-posh
 Version:        v25.13.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        The most customisable and low-latency cross platform/shell prompt renderer 
 License:        MIT
 
@@ -60,6 +60,8 @@ Themes bundled with oh-my-posh. Part of the oh-my-posh metapackage.
 %files themes
 %{_datadir}/%{name}/themes/
 
+# Empty metapackage
+%files
 
 %changelog
 %autochangelog
