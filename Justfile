@@ -10,12 +10,14 @@ export builder_tag := env("BUILDER_TAG","latest")
 
 build $SPEC_FILE *MOCK_ARGS:
     #!/usr/bin/bash
-    set -x
+    set +x
 
     OUTDIR="${OUTDIR:-/tmp/rpmbuild}"
     SPEC_PATH=$(realpath $SPEC_FILE)
     SPEC_NAME=$(basename $SPEC_PATH)
     SPEC_DIR=$(dirname $SPEC_PATH)
+
+    echo -e "\033[1;33m 🚧 Setting build directory at \033[1;37m ${OUTDIR} \033[0m"
 
     if [ -d ${OUTDIR} ]; then
         rm -fr ${OUTDIR}
@@ -23,13 +25,25 @@ build $SPEC_FILE *MOCK_ARGS:
 
     mkdir ${OUTDIR}
 
+    echo -e "\033[1;35m 🔍 Creating final SPEC file from template at\033[1;37m ${SPEC_FILE} \033[0m"
     rpkg spec --spec ${SPEC_PATH} --outdir ${OUTDIR}
+
+    echo -e "\033[1;33m 📄 Copying all patches to\033[1;37m ${OUTDIR} \033[0m"
     cp ${SPEC_DIR}/*.patch ${OUTDIR}
+
+    echo -e "\033[1;33m 🔍 Linting final SPEC file \033[0m"
     rpmlint ${OUTDIR}/${SPEC_NAME}
+
+    echo -e "\033[1;35m ⬇️  Downloading all sources and remote patches to\033[1;37m ${OUTDIR} \033[0m"
     spectool -ga ${OUTDIR}/${SPEC_NAME} --directory ${OUTDIR}
+
+    echo -e "\033[1;35m 🔍 Creating source RPM at\033[1;37m ${OUTDIR} \033[0m"
     rpkg --path ${SPEC_DIR} srpm --outdir ${OUTDIR}
 
+    echo -e "\033[1;36m 📦 Building package \033[0m"
     mock --spec ${OUTDIR}/${SPEC_NAME} --sources ${OUTDIR} --resultdir ${OUTDIR} {{ MOCK_ARGS }}
+
+    echo -e "\033[1;32m ✅ Build Complete! All files are available at\033[1;37m ${OUTDIR} \033[0m"
 
 # CI: This recipe will be run inside Github actions. It is the same as the build rpm recipe,
 # but run inside a container.
