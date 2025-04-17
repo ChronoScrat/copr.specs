@@ -31,12 +31,33 @@ go build \
     -ldflags "-linkmode=external -X main.version=%{version}"
 
 %install
+mkdir -p %{buildroot}%{_datadir}/%{name}/themes/
 install -Dm 0755 src/src %{buildroot}%{_bindir}/oh-my-posh
 install -Dm 0644 COPYING %{buildroot}%{_datadir}/licenses/oh-my-posh/COPYING
+install -Dm 0644 themes/* %{buildroot}%{_datadir}/%{name}/themes/
 
-%files
+
+%package cli
+Summary:        The binary for oh-my-posh
+
+%description cli
+The binary executable for oh-my-posh. Part of the oh-my-posh metapackage.
+
+%files cli
 %{_bindir}/oh-my-posh
 %license %{_datadir}/licenses/oh-my-posh/COPYING
+
+
+%package themes
+Summary:        Themes for oh-my-posh
+BuildArch:      noarch
+
+%description themes
+Themes bundled with oh-my-posh. Part of the oh-my-posh metapackage.
+
+%files themes
+%{_datadir}/%{name}/themes/
+
 
 %changelog
 %autochangelog
