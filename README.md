@@ -13,7 +13,7 @@ I plan to eventually include a README file in each subdirectory with more inform
 | `act` | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/act-cli/package/act-cli/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/act-cli/package/act-cli/) |
 | Devpod | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/devpod/package/devpod/) |
 | Oh My Posh | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/oh-my-posh/package/oh-my-posh/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/oh-my-posh/package/oh-my-posh/) |
-| Starship | Not Built |
+| Starship | [![Copr build status](https://copr.fedorainfracloud.org/coprs/chronoscrat/starship/package/starship/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/chronoscrat/starship/package/starship/) |
 
 
 The DevPod spec file is taken from [the uBlue packages](https://github.com/ublue-os/packages/blob/main/staging/devpod/devpod.spec).
