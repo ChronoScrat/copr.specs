@@ -11,6 +11,7 @@ export builder_tag := env("BUILDER_TAG","latest")
 build $SPEC_FILE *MOCK_ARGS:
     #!/usr/bin/bash
     set +x
+    set -o pipefail
 
     OUTDIR="${OUTDIR:-/tmp/rpmbuild}"
     SPEC_PATH=$(realpath $SPEC_FILE)
