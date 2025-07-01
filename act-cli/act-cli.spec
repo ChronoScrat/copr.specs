@@ -3,7 +3,7 @@
 
 Name:           act-cli
 # renovate: datasource=github-releases depName=nektos/act
-Version:        v0.2.78
+Version:        v0.2.79
 Release:        3%{?dist}
 Summary:        Run your GitHub Actions locally
 License:        MIT
