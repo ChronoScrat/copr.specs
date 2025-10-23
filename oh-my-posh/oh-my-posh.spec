@@ -3,7 +3,7 @@
 
 Name:           oh-my-posh
 # renovate: datasource=github-releases depName=JanDeDobbeleer/oh-my-posh
-Version:        v27.1.2
+Version:        v27.3.0
 Release:        1%{?dist}
 Summary:        The most customisable and low-latency cross platform/shell prompt renderer 
 License:        MIT
