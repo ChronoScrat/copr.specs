@@ -3,13 +3,14 @@
 
 Name:           oh-my-posh
 # renovate: datasource=github-releases depName=JanDeDobbeleer/oh-my-posh
-Version:        v27.4.3
+Version:        v27.5.2
 Release:        1%{?dist}
 Summary:        The most customisable and low-latency cross platform/shell prompt renderer 
 License:        MIT
 
 URL:            https://github.com/JanDeDobbeleer/oh-my-posh
 Source0:        %{url}/archive/refs/tags/%{version}.tar.gz
+#Patch:          0001-Downgrade-go-to-1.24.patch
 
 %global trimmed_version %(echo %{version} | tr -d "v")
 
@@ -22,10 +23,11 @@ Requires:      %{name}-cli >= %{version}-%{release}
 Oh My Posh is a highly customisable and extensible cross shell prompt theme engine.
 
 %prep
-%autosetup -n oh-my-posh-%{trimmed_version}
+%autosetup -p1 -n oh-my-posh-%{trimmed_version}
 
 %build
 cd ./src/
+go mod tidy
 go build \
     -trimpath \
     -buildmode=pie \

@@ -1,0 +1,25 @@
+From 251183a593ccdcf4e9a9e6f11c6788b49fc6fd75 Mon Sep 17 00:00:00 2001
+From: Nathanael Rolim <natanael.rolim@hotmail.com>
+Date: Fri, 7 Nov 2025 21:49:00 -0300
+Subject: [PATCH] Downgrade go to 1.24
+
+Signed-off-by: Nathanael Rolim <natanael.rolim@hotmail.com>
+---
+ src/go.mod | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/go.mod b/src/go.mod
+index d49080c67085..0241d0f10104 100644
+--- a/src/go.mod
++++ b/src/go.mod
+@@ -1,6 +1,6 @@
+ module github.com/jandedobbeleer/oh-my-posh/src
+ 
+-go 1.25.0
++go 1.24
+ 
+ require (
+ 	github.com/Azure/go-ansiterm v0.0.0-20250102033503-faa5f7b0171c
+-- 
+2.51.1
+

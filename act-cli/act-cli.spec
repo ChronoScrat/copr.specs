@@ -10,7 +10,7 @@ License:        MIT
 
 URL:            https://github.com/nektos/act
 Source0:        %{url}/archive/refs/tags/%{version}.tar.gz
-Patch:          0001-Downgrade-go-to-1.23.patch
+#Patch:          0001-Downgrade-go-to-1.23.patch
 
 BuildRequires:  git
 BuildRequires:  golang
