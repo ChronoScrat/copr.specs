@@ -57,7 +57,7 @@ jobs:
                uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
 
             - name: Setup Just
-              uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff
+              uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
 
             - name: Build ${{ matrix.specs }}
               id: build-packages
