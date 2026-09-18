@@ -16,7 +16,7 @@ on:
 
 jobs:
     changed_specs:
-        runs-on: ubuntu-24.04
+        runs-on: ubuntu-26.04
         outputs:
             changed-specs: ${{ steps.changed-files.outputs.changed-specs }}
         steps:
@@ -45,7 +45,7 @@ jobs:
                 echo "changed-specs=$(echo ${CHANGED_SPECS} | jq -c '.specs')" >> ${GITHUB_OUTPUT}
     
     build_packages:
-        runs-on: ubuntu-24.04
+        runs-on: ubuntu-26.04
         needs: changed_specs
         if: ${{ needs.changed_specs.outputs.changed-specs != '[]' }}
         strategy:
@@ -67,7 +67,7 @@ jobs:
                 ${just} ci ${{ matrix.specs }} --enable-network
     
     check:
-        runs-on: ubuntu-24.04
+        runs-on: ubuntu-26.04
         if: always()
         needs: build_packages
         steps:
